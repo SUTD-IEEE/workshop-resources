@@ -1,0 +1,32 @@
+<html>
+<style>
+.slider {
+  width: 100%;
+}
+.button {
+  visibility: hidden;
+}
+</style>
+<body>
+  <h1>Hello World</h1>
+</body>
+<div>
+  <form action = "/" method = "POST" id="form">
+    <p><input type="range" name="points" min="0" max="9" value="{{ num }}" id="myRange" class="slider"></p>
+    <p>Number: <span id="demo"></span></p>
+    <p><input type="submit" name="send" value="submit" id="bttn" class="button"></p>
+  </form>
+</div>
+<script>
+var slider = document.getElementById("myRange");
+var demo = document.getElementById("demo");
+
+slider.oninput = function() {
+  demo.innerHTML = this.value;
+}
+
+slider.onmouseup = function() {
+  document.getElementById("form").submit()
+}
+</script>
+</html>
