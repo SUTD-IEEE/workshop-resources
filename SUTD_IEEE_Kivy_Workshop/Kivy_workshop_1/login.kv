@@ -1,0 +1,35 @@
+<LoginWindow>:
+    orientation: "vertical"
+    BoxLayout:
+        size_hint: 1,0.1
+        BoxLayout:
+            size_hint: 0.1,1
+        BoxLayout:
+            size_hint: 0.8,1
+            Label:
+                text: "Login Page"
+        BoxLayout:
+            size_hint: 0.1,1
+            Label:
+                text: "x"
+    BoxLayout:
+        size_hint: 1,0.9
+        FloatLayout:
+            Button:
+                pos_hint: {"center_x": 0.5, "center_y": 0.7}
+                size_hint: None, None
+                height: 80
+                width: 300
+                text: "Username"
+            Button:
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+                size_hint: None, None
+                height: 80
+                width: 300
+                text: "************"
+            Button:
+                pos_hint: {"center_x": 0.5, "center_y": 0.4}
+                size_hint: None, None
+                height: 60
+                width: 120
+                text: "Login"

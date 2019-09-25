@@ -1,0 +1,15 @@
+<mainWindow>: # this is a boxlayout parent!!!
+    canvas.before:
+        Color:
+            rgba: 0.2,0.8,0.2,1 # tint
+        Rectangle:
+            source: "wallpaper.jpg"
+            size: self.size
+            pos: self.pos
+    Label:
+        text: "[color=#d85f5f]Hello[/color] Kivy"
+        font_size: self.height/6
+        text_size: self.size
+        halign: "center"
+        valign: "center"
+        markup: True

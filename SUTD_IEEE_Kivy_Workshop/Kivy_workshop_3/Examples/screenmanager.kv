@@ -1,0 +1,97 @@
+# This is how you import a class in kivy file
+# import <as name> <full address of the import class>'
+
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+#:import SwapTransition kivy.uix.screenmanager.SwapTransition
+#:import WipeTransition kivy.uix.screenmanager.WipeTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+#:import FallOutTransition kivy.uix.screenmanager.FallOutTransition
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+
+<myscreen>:
+    ScreenManager:
+        id: MANAGER
+
+        Screen:
+            name: "Screen 1"
+            BoxLayout:
+                spacing: 20
+                orientation: "vertical"
+                BoxLayout:
+                    size_hint: 1, 0.1
+                    Label:
+                        text: "Screen 1"
+                GridLayout:
+                    rows: 5
+                    cols: 2
+                    spacing: 10
+                    size_hint: 1, 0.4
+                    Button:
+                        text: "Set SlideTransition UP"
+                        on_press: MANAGER.transition = SlideTransition(direction = "up")
+                    Button:
+                        text: "Set SlideTransition DOWN"
+                        on_press: MANAGER.transition = SlideTransition(direction = "down")
+                    Button:
+                        text: "Set SlideTransition LEFT"
+                        on_press: MANAGER.transition = SlideTransition(direction = "left")
+                    Button:
+                        text: "Set Slide Transition RIGHT"
+                        on_press: MANAGER.transition = SlideTransition(direction = "right")
+                    Button:
+                        text: "Set SwapTransition"
+                        on_press: MANAGER.transition = SwapTransition()
+                    Button:
+                        text: "Set WipeTransition"
+                        on_press: MANAGER.transition = WipeTransition()
+                    Button:
+                        text: "Set FadeTransition"
+                        on_press: MANAGER.transition = FadeTransition()
+                    Button:
+                        text: "Set RiseInTransition"
+                        on_press: MANAGER.transition = RiseInTransition()
+                    Button:
+                        text: "Set FallOutTransition"
+                        on_press: MANAGER.transition = FallOutTransition()
+                    Button:
+                        text: "Set NoTransition"
+                        on_press: MANAGER.transition = NoTransition()
+                BoxLayout:
+                    size_hint: 1,0.5
+                    Button:
+                        text: "Previous"
+                        on_press: MANAGER.current = "Screen 3"
+                    Button:
+                        text: "Next"
+                        on_press: MANAGER.current = "Screen 2"
+
+        Screen:
+            name: "Screen 2"
+            BoxLayout:
+                orientation: "vertical"
+                BoxLayout:
+                    Label:
+                        text: "Screen 2"
+                BoxLayout:
+                    Button:
+                        text: "Previous"
+                        on_press: MANAGER.current = MANAGER.previous()
+                    Button:
+                        text: "Next"
+                        on_press: MANAGER.current = MANAGER.next()
+        Screen:
+            name: "Screen 3"
+            BoxLayout:
+                orientation: "vertical"
+                BoxLayout:
+                    Label:
+                        text: "Screen 3"
+                BoxLayout:
+                    Button:
+                        text: "Previous"
+                        on_press: MANAGER.current = "Screen 2"
+                    Button:
+                        text: "Next"
+                        on_press: MANAGER.current = "Screen 1"

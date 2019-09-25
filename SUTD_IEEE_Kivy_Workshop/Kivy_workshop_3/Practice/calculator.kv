@@ -1,0 +1,82 @@
+<calculatorWindow>:
+    orientation: "vertical"
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        size_hint: 1,0.2
+        TextInput:
+            id: display
+            hint_text: "0"
+            font_size: (self.height+self.width)/20
+            multiline: False
+
+    GridLayout:
+        size_hint: 1, 0.8
+        spacing: 10
+        cols: 4
+        rows: 4
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "7"
+            on_press: display.text += "7"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "8"
+            on_press: display.text += "8"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "9"
+            on_press: display.text += "9"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "+"
+            on_press: display.text += "+"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "4"
+            on_press: display.text += "4"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "5"
+            on_press: display.text += "5"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "6"
+            on_press: display.text += "6"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "-"
+            on_press: display.text += "-"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "1"
+            on_press: display.text += "1"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "2"
+            on_press: display.text += "2"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "3"
+            on_press: display.text += "3"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "*"
+            on_press: display.text += "*"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "AC"
+            on_press: display.text = ""
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "0"
+            on_press: display.text += "0"
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "="
+            on_press: root.evaluation()
+        Button:
+            font_size: (self.height+self.width)/10
+            text: "/"
+            on_press: display.text += "/"

@@ -1,0 +1,15 @@
+<mainWindow>:
+    orientation: "vertical"
+    spacing: 50
+    Label:
+        id: welcome
+        text: "Input your name and age here:"
+    TextInput:
+        id: username
+        hint_text: "Name"
+    TextInput:
+        id: age
+        hint_text: "Age"
+    Button:
+        text: "Submit"
+        on_press: root.send_info() # when button is pressed, send_info() function is executed

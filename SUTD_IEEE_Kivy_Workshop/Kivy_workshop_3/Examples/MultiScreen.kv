@@ -1,0 +1,164 @@
+# Special thanks to our IEEE Vice Pres Shi Hui who made this example!!
+
+
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+#:import SwapTransition kivy.uix.screenmanager.SwapTransition
+#:import WipeTransition kivy.uix.screenmanager.WipeTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+#:import FallOutTransition kivy.uix.screenmanager.FallOutTransition
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+<CustomScreen0>:
+    Label:
+        font_size: 42
+        text: root.name
+
+    Button:
+        text: 'Next screen'
+        size_hint: None, None
+        pos_hint: {'right': 1}
+        size: 150, 50
+        on_release: root.manager.current = root.manager.next()
+
+    Button:
+        text: 'Previous screen'
+        size_hint: None, None
+        size: 150, 50
+        on_release: root.manager.current = root.manager.previous()
+
+    BoxLayout:
+        size_hint: .5, None
+        height: 250
+        pos_hint: {'center_x': .5}
+        orientation: 'vertical'
+        Label:
+            font_size: 20
+            text: 'Pick a transition animation'
+        Button:
+            text: 'Use SlideTransition with "up" direction'
+            on_release: root.manager.transition = SlideTransition(direction="up")
+
+        Button:
+            text: 'Use SlideTransition with "down" direction'
+            on_release: root.manager.transition = SlideTransition(direction="down")
+
+        Button:
+            text: 'Use SlideTransition with "left" direction'
+            on_release: root.manager.transition = SlideTransition(direction="left")
+
+        Button:
+            text: 'Use SlideTransition with "right" direction'
+            on_release: root.manager.transition = SlideTransition(direction="right")
+
+        Button:
+            text: 'Use SwapTransition'
+            on_release: root.manager.transition = SwapTransition()
+
+        Button:
+            text: 'Use WipeTransition'
+            on_release: root.manager.transition = WipeTransition()
+
+        Button:
+            text: 'Use FadeTransition'
+            on_release: root.manager.transition = FadeTransition()
+
+        Button:
+            text: 'Use FallOutTransition'
+            on_release: root.manager.transition = FallOutTransition()
+
+        Button:
+            text: 'Use RiseInTransition'
+            on_release: root.manager.transition = RiseInTransition()
+        Button:
+            text: 'Use NoTransition'
+            on_release: root.manager.transition = NoTransition(duration=0)
+            
+<CustomScreen1>:
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            font_size: 42
+            text: root.name
+        Label:
+            font_size: 42
+            text: 'Join IEEE!!!'
+
+    Button:
+        text: 'Next screen'
+        size_hint: None, None
+        pos_hint: {'right': 1}
+        size: 150, 50
+        on_release: root.manager.current = root.manager.next()
+
+    Button:
+        text: 'Previous screen'
+        size_hint: None, None
+        size: 150, 50
+        on_release: root.manager.current = root.manager.previous()
+
+<CustomScreen2>:
+    GridLayout:
+        rows:2
+        cols:2
+        
+        Label:
+            font_size: 42
+            text: root.name
+            
+        Label:
+            font_size: 42
+            text: 'Kivy documentation\nis horrible'
+    
+        Button:
+            text: 'Previous screen'
+            on_release: root.manager.current = root.manager.previous()
+            
+        Button:
+            text: 'Next screen'
+            on_release: root.manager.current = root.manager.next()
+
+<CustomScreen3>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            font_size: 42
+            text: root.name
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                font_size: 20
+                text: "child in a child"
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    font_size: 20
+                    text: "child in a child"
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        font_size: 20
+                        text: "child in a child"
+                    BoxLayout:
+                        orientation: 'vertical'
+                        Label:
+                            font_size: 20
+                            text: "child in a child"
+                        BoxLayout:
+                            orientation: 'vertical'
+                            Label:
+                                font_size: 20
+                                text: "child in a child"
+
+    Button:
+        text: 'Next screen'
+        size_hint: None, None
+        pos_hint: {'right': 1}
+        size: 150, 50
+        on_release: root.manager.current = root.manager.next()
+
+    Button:
+        text: 'Previous screen'
+        size_hint: None, None
+        size: 150, 50
+        on_release: root.manager.current = root.manager.previous()

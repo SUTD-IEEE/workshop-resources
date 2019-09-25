@@ -1,0 +1,90 @@
+<loginWindow>:
+
+    id: main_window
+    orientation: "vertical"
+    spacing: 10
+    side_space: self.size[0]/3 # self.size returns a list [x,y]
+
+# now putting widgets inside
+
+    canvas.before:
+    # before means before all the widgets are added
+    # drawing board, can draw all widgets on top of this
+        Rectangle:
+            source: "background.jpg"
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (0.06,0.45,0.45,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "Access Control"
+            bold: True
+            size_hint_x: 0.9
+        Button:
+            text: "x"
+            size_hint_x: 0.1
+            on_press: app.get_running_app().stop()
+    BoxLayout:
+        orientation: "vertical"
+        padding: main_window.side_space, 10
+        spacing: 20
+        Label:
+            id: sp
+            size_hint_y: None
+            height: 30
+        BoxLayout:
+            size_hint: 1, 0.5
+            Image:
+                id: user_logo
+                source: "userlogo.png"
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 20 # change spacing of the sub-items
+            size_hint: 1, 0.3
+            Label:
+                id: info
+                size_hint_y: None
+                height: 50
+                text: ""
+                markup: True
+            TextInput:
+                id: username_filled
+                size_hint_y: None
+                height: 60
+                hint_text: "Username"
+                multiline: False
+                # focus means current fill in field is here
+                focus: True
+                on_text_validate: password_filled.focus = True
+            TextInput:
+                id: password_filled
+                size_hint_y: None
+                height: 60
+                hint_text: "Password"
+                multiline: False
+                # make char entered invisible
+                password: True
+                # call the function validate_user()
+                on_text_validate: root.validate_user()
+        Label:
+            id: sp1
+            size_hint_y: None
+            height: 50
+        Button:
+            text: "Sign In"
+            size_hint: 1, 0.1
+            background_color: (0.06,0.45,0.45,1)
+            background_normal: ""
+            on_release: root.validate_user()
+        Label:
+            id: sp2
+            size_hint_y: None
+            height: 100

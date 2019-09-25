@@ -1,0 +1,44 @@
+<ID>:
+    padding: 100
+    spacing: 20
+    orientation: "vertical"
+
+    Button:
+        id: first
+        size_hint: None, None
+        height: 200
+        width: 1000
+        text: "First Button"
+        background_normal: "pink.jpg"
+    Button:
+        id: second
+        size_hint: None, None
+        height: 200
+        width: 1000
+        text: "BBFISH"
+        background_normal: "yellow.jpg"
+    Button:
+        id: third
+        size_hint: None, None
+        height: 200
+        width: 1000
+        text: "When pressed, this text is the same as first button"
+        background_normal: "blue.jpg"
+        on_press: self.text = first.text
+        on_release: self.text = "When pressed, this text is the same as first button"
+    Button:
+        id: last
+        size_hint: None, None
+        height: 200
+        width: 1000
+        text: "My background is the same as first"
+        background_normal: "green.jpg"
+        on_press: self.background_down = first.background_normal
+    Button:
+        id: explosion
+        size_hint: None, None
+        height: 200
+        width: 1000
+        text: "0"
+        font_size: 10
+        on_press: root.explode()
