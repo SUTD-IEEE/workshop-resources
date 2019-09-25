@@ -10,6 +10,13 @@ __Make sure you have virtualenv installed on your laptop__
 pip install virtualenv
 ```
 
+_Don't have pip?_
+* For Windows users: https://www.liquidweb.com/kb/install-pip-windows/
+* For Mac users:
+```bash
+sudo easy_install pip
+sudo pip install --upgrade pip
+```
 ---
 
 Clone git package and activate virtual environment
