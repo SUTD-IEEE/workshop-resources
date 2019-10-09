@@ -35,8 +35,13 @@ def measure_cm():
 # entering distance measuring loop
 try:
 	while True:
+
 		distance = measure_cm()			# return measured distance
 		print("Current distance: {} cm".format(distance))
+		if distance < CRASH_DISTANCE:
+			print("DANGER")
+		else:
+			print("SAFE")
 
 		time.sleep(0.1)
 
